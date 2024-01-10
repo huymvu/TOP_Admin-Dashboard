@@ -4,25 +4,32 @@
     box-sizing: border-box; 
 }
 
+a{
+    text-decoration: none;
+}
 .page-container{
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
+    height:100vh
 }
 
 .main-content{
-    display: flex;
+    padding:1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: min-content 1fr;
+    gap:1rem;
 }
 
 .projects{
-    flex:2;
+    grid-column: 1/2;
+    grid-row: 1/3;
 }
+
 .project-items{
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.announce-trend{
-    flex:1;
+    gap:1rem;
 }
 
 /* -----------------Sidebar Styles-------------------------- */
@@ -43,15 +50,14 @@
     align-items: center;
 }
 
-svg{
+.sidebar svg{
     height: 2rem;
     width: auto;
     margin-right: 1rem;
     fill: white;
 }
 
-a{
-    text-decoration: none;
+.sidebar a{
     color: inherit;
     display: flex;
     align-items: center;
@@ -59,3 +65,178 @@ a{
 /* ---------------------------------------------------------- */
 /* -----------------Header Styles-------------------------- */
 
+.header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem;
+    gap:1rem;
+}
+
+.search-area{
+    display: flex;
+    align-items: start;
+}
+#search-bar{
+    border-radius: 7px;
+    background-color: #e7e5e4;
+    height: 1rem;
+    width: 80%;
+    border-style: none;
+}
+
+#icon-search{
+    fill:black;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+#small-user-avatar{
+    height: 2rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.header a{
+    color: inherit;
+}
+
+.header svg{
+    height: auto;
+}
+
+#notice-icon{
+    height: 2rem;
+    width: auto;
+    margin-right: 1rem;
+    fill:black;
+}
+
+.notice-area{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.user-info{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap:1rem;
+}
+
+#big-user-avatar{
+    height: 3rem;
+    grid-row: 1/3;
+    border-radius: 50%;
+}
+
+.intro{
+    font-size: small;
+    font-weight: bold;
+}
+.user-name{
+    font-weight: bold;
+    font-size: large;
+}
+
+.user-action{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: end;
+    align-items: center;
+    gap:1rem;
+}
+.user-action button{
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    height: 2rem;
+}
+/* ---------------------------------------------------------- */
+/* ---------------------Main Content Style------------------- */
+.main-content{
+    background-color:#e7e5e4;
+}
+.project-items{
+    margin-top: 1rem;
+}
+.project-items .item{
+    background-color: white;
+    border-radius: 10px;
+    border-left: 10px solid #fde047;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 1rem;
+    gap:1rem;
+    align-items: center;
+}
+
+.item .title{
+    font-weight: bold;
+}
+
+.item .content{
+    font-size: small;
+    color:grey;
+}
+.actions{
+    justify-self: end;
+}
+.item svg{
+    fill: black;
+    height: 1rem;
+    margin: 1rem;
+}
+/* ---------------------------------------------------------- */
+/* -------------------Announcement + Trending Styles------------------- */
+
+.announcement-container,.trending-container{
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.announcement{
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 0.5rem;
+}
+
+.announcement .content{
+    width:40ch;
+    height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    color:grey;
+    margin-bottom: 0.5rem;
+}
+.announcement .title{
+    font-weight: bold;
+}
+
+.trend{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap:1rem;
+}
+
+#big-user-avatar{
+    height: 3rem;
+    grid-row: 1/3;
+    border-radius: 50%;
+}
+
+.trend .user-id{
+    color: black;
+}
+
+.trend div{
+    font-size: small;
+    color:grey;
+}
